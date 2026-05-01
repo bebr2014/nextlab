@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pEMUTENkANWe38rIdjGY4tR59Cq-7KaK1naDLlzRzm8Uh9UtLJEri7TLkEbxqCWl-5iUz1HwL7y1CzIWRH4cvrCaUqZWtX7DchYdGx29VQhlyyUgWs51FaPcsQcBUPOZ_X3ep0rp9iJPRfhItIIcdewmYAB5QUK-9IR3qneSSeu3ENCK4iOcLEBvTlAEDX7Jp0G5eb381Z6aCcpo6IVx4TUVEo7nUjIqRqyYlKREN0UBAaIqExO8Car9BMuCviyDae4r6L4JI8Jbh9JC9caLmwZxQersJhEaSgS4uIiUZJoG7xqCBmXy-ZgB9C-AccwYsKHHAbavoElkLifEtkuC3E0pSVn5C34rxZxAdf8VbNZt_rUadBCbACEewtVK-_wg4KGJrgX4CRaxS3HYHj-JdJT0IxBJTEvPwh7vabkowr_lHO5-zcUGxjbFAT5cjTWyJwl5qOba5FX0hyvCO5_uIjjIFLi8mXoAtxC3GEyOAg-uRFWv2gBJA_wA8kpdq3d1wjsN1jhsi6zz20gqELEk9f639QmlDcIn3srZ1gQVk37MBVFyIvTvt9iF-ZZkeVDj42GSLJxPf6DEDIMMIfN4dAC7OrPQrpdzSlXZAYOw98hfbXIDI5dnISllHLqE9IvvBU4PxXTHm8E0vleTO7POPJJ3QokLX3oLiRJTKws0Vpdk_DdozsH_9TX5_uLwhPHR" charset="UTF-8"></script><style>
+<style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -104,60 +104,6 @@
     gap: 4px;
   }
   .nav-links a:hover { background: var(--bg2); color: var(--violet); }
-  .nav-links li { position: relative; }
-  .nav-links .has-dropdown > a::after {
-    content: '';
-    width: 0; height: 0;
-    border-left: 3.5px solid transparent;
-    border-right: 3.5px solid transparent;
-    border-top: 4px solid currentColor;
-    display: inline-block;
-    margin-left: 2px;
-    transition: transform 0.2s;
-  }
-  .nav-links .has-dropdown:hover > a::after { transform: rotate(180deg); }
-  .dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-6px);
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 8px;
-    min-width: 260px;
-    box-shadow: var(--shadow-lg);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.18s, transform 0.18s;
-    z-index: 200;
-  }
-  .nav-links .has-dropdown:hover .dropdown {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(0);
-  }
-  .dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--text);
-    transition: background 0.15s;
-    cursor: pointer;
-  }
-  .dropdown-item:hover { background: var(--bg2); }
-  .dd-thumb {
-    width: 44px;
-    height: 36px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-  .dd-label { font-size: 13.5px; font-weight: 600; }
-  .dd-sub { font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
   .nav-cta {
     background: var(--violet);
     color: #fff !important;
@@ -440,7 +386,7 @@
   .why-title { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
   .why-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
-  /* ── CTA ── */
+  /* ── CTA / CONTACT ── */
   .cta-section {
     padding: 140px 0;
     background: var(--dark);
@@ -466,41 +412,47 @@
     margin-bottom: 20px;
     position: relative;
   }
-  .cta-section p { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto 40px; line-height: 1.6; position: relative; }
-  .cta-btns { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; }
-  .btn-primary-dark {
-    background: var(--violet);
+  .cta-section p { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto 48px; line-height: 1.6; position: relative; }
+  .contact-email-block {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .contact-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     color: #fff;
-    padding: 15px 32px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 4px 24px rgba(108,59,255,0.4);
-  }
-  .btn-primary-dark:hover { background: var(--violet-dark); transform: translateY(-2px); }
-  .btn-outline-dark {
-    background: transparent;
-    color: rgba(255,255,255,0.75);
-    padding: 14px 32px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.15);
-    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    padding: 18px 40px;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
   }
-  .btn-outline-dark:hover { border-color: rgba(255,255,255,0.4); color: #fff; transform: translateY(-1px); }
+  .contact-email-link:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+  .contact-email-link svg { opacity: 0.5; flex-shrink: 0; }
+  .contact-phone {
+    color: rgba(255,255,255,0.4);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
 
   /* ── FOOTER ── */
   .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 80px 0 0; }
-  .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 60px; }
+  .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 48px; margin-bottom: 60px; }
   .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; text-decoration: none; color: var(--text); font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
   .footer-tagline { font-size: 14px; color: var(--text-muted); line-height: 1.6; max-width: 260px; }
   .footer-col h4 { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
   .footer-col a { display: block; font-size: 14px; color: var(--text-muted); text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
   .footer-col a:hover { color: var(--violet); }
+  .footer-col .footer-country { display: block; font-size: 14px; color: var(--text-light); margin-top: 4px; font-weight: 500; }
   .footer-bar { border-top: 1px solid var(--border); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--text-light); flex-wrap: wrap; gap: 12px; }
   .footer-bar a { color: var(--text-light); text-decoration: none; transition: color 0.15s; }
   .footer-bar a:hover { color: var(--violet); }
@@ -535,6 +487,7 @@
     .services-section { padding: 80px 0; }
     .why-section { padding: 80px 0; }
     .cta-section { padding: 100px 0; }
+    .contact-email-link { font-size: 18px; padding: 14px 24px; }
   }
 </style>
 </head>
@@ -548,7 +501,6 @@
 <!-- ── NAVBAR ── -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <!-- Logo -->
     <a href="#" class="nav-logo">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <rect width="30" height="30" rx="8" fill="#6C3BFF"/>
@@ -558,41 +510,17 @@
       Next Lab
     </a>
 
-    <!-- Desktop Nav -->
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
-      <li class="has-dropdown">
-        <a href="#services">Services</a>
-        <div class="dropdown">
-          <a class="dropdown-item" href="#services">
-            <div class="dd-thumb" style="background:linear-gradient(135deg,#6C3BFF,#3B82F6);">
-              <svg width="44" height="36" viewBox="0 0 44 36"><rect x="4" y="6" width="36" height="24" rx="3" fill="rgba(255,255,255,0.15)"/><rect x="8" y="10" width="14" height="2" rx="1" fill="rgba(255,255,255,0.6)"/><rect x="8" y="14" width="9" height="8" rx="2" fill="rgba(255,255,255,0.3)"/><rect x="19" y="14" width="17" height="3" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="19" y="19" width="12" height="3" rx="1" fill="rgba(255,255,255,0.15)"/></svg>
-            </div>
-            <div><div class="dd-label">AI Development</div><div class="dd-sub">LLMs, agents & pipelines</div></div>
-          </a>
-          <a class="dropdown-item" href="#services">
-            <div class="dd-thumb" style="background:linear-gradient(135deg,#F59E0B,#EF4444);">
-              <svg width="44" height="36" viewBox="0 0 44 36"><circle cx="22" cy="18" r="10" fill="rgba(255,255,255,0.2)"/><circle cx="22" cy="18" r="6" fill="rgba(255,255,255,0.3)"/><circle cx="22" cy="18" r="3" fill="rgba(255,255,255,0.5)"/></svg>
-            </div>
-            <div><div class="dd-label">Product Design</div><div class="dd-sub">UX/UI & systems</div></div>
-          </a>
-          <a class="dropdown-item" href="#services">
-            <div class="dd-thumb" style="background:linear-gradient(135deg,#059669,#10B981);">
-              <svg width="44" height="36" viewBox="0 0 44 36"><rect x="6" y="8" width="10" height="20" rx="2" fill="rgba(255,255,255,0.3)"/><rect x="19" y="14" width="10" height="14" rx="2" fill="rgba(255,255,255,0.3)"/><rect x="32" y="10" width="6" height="18" rx="2" fill="rgba(255,255,255,0.3)"/></svg>
-            </div>
-            <div><div class="dd-label">All Services</div><div class="dd-sub">View everything we do</div></div>
-          </a>
-        </div>
-      </li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#insights">Insights</a></li>
     </ul>
 
     <div class="nav-cta-wrap">
-      <a href="#contact" class="nav-cta">Book a Call</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
     </div>
 
-    <!-- Hamburger -->
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -605,7 +533,7 @@
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#insights" onclick="toggleMenu()">Insights</a>
-  <a href="#contact" onclick="toggleMenu()" style="color:var(--violet)">Book a Call →</a>
+  <a href="#contact" onclick="toggleMenu()" style="color:var(--violet)">Get in Touch →</a>
 </div>
 
 <!-- ── HERO ── -->
@@ -623,7 +551,7 @@
     </p>
     <div class="hero-btns fade-up fade-up-d3">
       <a href="#contact" class="btn-primary">
-        Book Discovery Call
+        Get in Touch
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="#work" class="btn-outline">
@@ -639,99 +567,67 @@
             <stop offset="0%" stop-color="#6C3BFF"/>
             <stop offset="100%" stop-color="#3B82F6"/>
           </linearGradient>
-          <linearGradient id="cg1" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stop-color="rgba(255,255,255,0.05)"/>
-            <stop offset="100%" stop-color="rgba(255,255,255,0.2)"/>
-          </linearGradient>
         </defs>
         <rect width="1200" height="525" fill="url(#hg)"/>
-        <!-- Noise texture overlay -->
         <rect width="1200" height="525" fill="rgba(0,0,0,0.1)"/>
-
-        <!-- Sidebar -->
         <rect x="0" y="0" width="200" height="525" fill="rgba(0,0,0,0.25)"/>
         <circle cx="32" cy="36" r="14" fill="rgba(255,255,255,0.2)"/>
         <rect x="18" y="70" width="164" height="1" fill="rgba(255,255,255,0.1)"/>
-        <!-- Nav items -->
         <rect x="16" y="90" width="100" height="32" rx="8" fill="rgba(255,255,255,0.15)"/>
         <rect x="16" y="130" width="80" height="28" rx="8" fill="rgba(255,255,255,0.07)"/>
         <rect x="16" y="166" width="92" height="28" rx="8" fill="rgba(255,255,255,0.07)"/>
         <rect x="16" y="202" width="76" height="28" rx="8" fill="rgba(255,255,255,0.07)"/>
         <rect x="16" y="238" width="88" height="28" rx="8" fill="rgba(255,255,255,0.07)"/>
-
-        <!-- Top bar -->
         <rect x="200" y="0" width="1000" height="56" fill="rgba(255,255,255,0.06)"/>
         <rect x="220" y="18" width="200" height="20" rx="10" fill="rgba(255,255,255,0.1)"/>
         <circle cx="1060" cy="28" r="16" fill="rgba(255,255,255,0.15)"/>
         <circle cx="1100" cy="28" r="16" fill="rgba(255,255,255,0.1)"/>
         <circle cx="1150" cy="28" r="14" fill="rgba(255,255,255,0.2)"/>
-
-        <!-- Main KPI cards row -->
         <rect x="220" y="74" width="200" height="100" rx="12" fill="rgba(255,255,255,0.12)"/>
         <rect x="230" y="84" width="80" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
         <text x="230" y="152" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="white">$4.2M</text>
         <text x="230" y="168" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">▲ 23.4% vs last month</text>
-
         <rect x="435" y="74" width="200" height="100" rx="12" fill="rgba(255,255,255,0.12)"/>
         <rect x="445" y="84" width="90" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
         <text x="445" y="152" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="white">18,420</text>
         <text x="445" y="168" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">▲ 9.1% active users</text>
-
         <rect x="650" y="74" width="200" height="100" rx="12" fill="rgba(255,255,255,0.12)"/>
         <rect x="660" y="84" width="70" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
         <text x="660" y="152" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="white">97.4%</text>
         <text x="660" y="168" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">Model accuracy</text>
-
         <rect x="865" y="74" width="200" height="100" rx="12" fill="rgba(255,255,255,0.12)"/>
         <rect x="875" y="84" width="85" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
         <text x="875" y="152" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="white">3.2ms</text>
         <text x="875" y="168" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">Avg. latency</text>
-
-        <!-- Chart area -->
         <rect x="220" y="190" width="520" height="290" rx="12" fill="rgba(255,255,255,0.08)"/>
         <rect x="235" y="205" width="120" height="12" rx="6" fill="rgba(255,255,255,0.35)"/>
-        <!-- Line chart path -->
         <polyline points="240,440 290,400 340,410 390,370 440,355 490,320 540,305 590,280 640,260 690,240 720,220" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Area fill -->
         <path d="M240,440 L290,400 L340,410 L390,370 L440,355 L490,320 L540,305 L590,280 L640,260 L690,240 L720,220 L720,450 L240,450 Z" fill="rgba(255,255,255,0.08)"/>
-        <!-- Grid lines -->
         <line x1="235" y1="430" x2="730" y2="430" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
         <line x1="235" y1="390" x2="730" y2="390" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
         <line x1="235" y1="350" x2="730" y2="350" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
         <line x1="235" y1="310" x2="730" y2="310" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
         <line x1="235" y1="270" x2="730" y2="270" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
         <line x1="235" y1="230" x2="730" y2="230" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-        <!-- Data point highlight -->
         <circle cx="640" cy="260" r="5" fill="white" opacity="0.9"/>
         <rect x="620" y="230" width="80" height="24" rx="6" fill="rgba(0,0,0,0.4)"/>
         <text x="628" y="246" font-family="Inter,sans-serif" font-size="10" fill="white">Jun: +34%</text>
-
-        <!-- Right sidebar -->
         <rect x="755" y="190" width="310" height="135" rx="12" fill="rgba(255,255,255,0.08)"/>
         <rect x="768" y="205" width="90" height="12" rx="6" fill="rgba(255,255,255,0.35)"/>
-        <!-- Donut-ish ring -->
         <circle cx="820" cy="290" r="36" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="20"/>
         <circle cx="820" cy="290" r="36" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="20" stroke-dasharray="160 80" stroke-dashoffset="-20"/>
         <circle cx="820" cy="290" r="36" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="20" stroke-dasharray="60 180" stroke-dashoffset="-180"/>
         <text x="870" y="276" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">● Active</text>
         <text x="870" y="294" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">● Pending</text>
         <text x="870" y="312" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.25)">● Inactive</text>
-
         <rect x="755" y="335" width="310" height="145" rx="12" fill="rgba(255,255,255,0.08)"/>
         <rect x="768" y="350" width="100" height="12" rx="6" fill="rgba(255,255,255,0.35)"/>
-        <!-- Bar chart -->
         <rect x="775" y="430" width="28" height="60" rx="4" fill="rgba(255,255,255,0.2)"/>
         <rect x="815" y="410" width="28" height="80" rx="4" fill="rgba(255,255,255,0.4)"/>
         <rect x="855" y="395" width="28" height="95" rx="4" fill="rgba(255,255,255,0.6)"/>
         <rect x="895" y="380" width="28" height="110" rx="4" fill="rgba(255,255,255,0.8)"/>
         <rect x="935" y="400" width="28" height="90" rx="4" fill="rgba(255,255,255,0.5)"/>
         <rect x="975" y="415" width="28" height="75" rx="4" fill="rgba(255,255,255,0.3)"/>
-        <text x="775" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q1</text>
-        <text x="815" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q2</text>
-        <text x="855" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q3</text>
-        <text x="895" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q4</text>
-        <text x="935" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q5</text>
-        <text x="975" y="472" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Q6</text>
       </svg>
     </div>
   </div>
@@ -742,7 +638,6 @@
   <div class="ticker-label">Trusted by leading organizations</div>
   <div style="overflow:hidden;">
     <div class="ticker-track" id="ticker">
-      <!-- Items duplicated for seamless loop -->
       <div class="ticker-item">Databricks</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Plaid</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Scale AI</div><div class="ticker-item ticker-sep">·</div>
@@ -751,7 +646,6 @@
       <div class="ticker-item">Figma</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Stripe</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Notion</div><div class="ticker-item ticker-sep">·</div>
-      <!-- Duplicate -->
       <div class="ticker-item">Databricks</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Plaid</div><div class="ticker-item ticker-sep">·</div>
       <div class="ticker-item">Scale AI</div><div class="ticker-item ticker-sep">·</div>
@@ -778,18 +672,15 @@
         <svg width="100%" height="100%" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <rect width="600" height="450" fill="url(#ng1)"/>
           <defs><linearGradient id="ng1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6C3BFF"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient></defs>
-          <!-- Window chrome -->
           <rect width="600" height="40" fill="rgba(0,0,0,0.3)"/>
           <circle cx="20" cy="20" r="6" fill="#FF5F57"/><circle cx="40" cy="20" r="6" fill="#FFBD2E"/><circle cx="60" cy="20" r="6" fill="#28C840"/>
           <rect x="180" y="12" width="240" height="16" rx="8" fill="rgba(255,255,255,0.1)"/>
-          <!-- Sidebar -->
           <rect x="0" y="40" width="140" height="410" fill="rgba(0,0,0,0.2)"/>
           <rect x="10" y="56" width="120" height="30" rx="8" fill="rgba(255,255,255,0.15)"/>
           <rect x="10" y="94" width="90" height="24" rx="6" fill="rgba(255,255,255,0.07)"/>
           <rect x="10" y="126" width="108" height="24" rx="6" fill="rgba(255,255,255,0.07)"/>
           <rect x="10" y="158" width="80" height="24" rx="6" fill="rgba(255,255,255,0.07)"/>
           <rect x="10" y="190" width="96" height="24" rx="6" fill="rgba(255,255,255,0.07)"/>
-          <!-- Main content -->
           <rect x="155" y="55" width="180" height="80" rx="10" fill="rgba(255,255,255,0.12)"/>
           <text x="165" y="75" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">DIAGNOSES TODAY</text>
           <text x="165" y="110" font-family="Inter,sans-serif" font-size="30" font-weight="900" fill="white">1,247</text>
@@ -799,14 +690,11 @@
           <rect x="495" y="55" width="95" height="80" rx="10" fill="rgba(255,255,255,0.12)"/>
           <text x="505" y="75" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">ALERTS</text>
           <text x="505" y="110" font-family="Inter,sans-serif" font-size="30" font-weight="900" fill="#F87171">12</text>
-          <!-- Brain activity chart -->
           <rect x="155" y="148" width="430" height="180" rx="10" fill="rgba(255,255,255,0.08)"/>
           <text x="168" y="168" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.6)">Neural Activity Monitor</text>
-          <!-- Wavy lines -->
           <path d="M165,240 Q195,200 225,240 Q255,280 285,240 Q315,200 345,240 Q375,280 405,240 Q435,200 465,240 Q495,280 525,240 L575,240" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
           <path d="M165,260 Q195,230 225,260 Q255,290 285,270 Q315,250 345,270 Q375,290 405,260 Q435,230 465,260 L575,260" fill="none" stroke="rgba(100,220,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
           <path d="M165,280 Q195,255 215,280 Q235,305 265,280 Q295,255 325,280 Q355,305 385,280 Q415,255 445,280 Q475,305 505,280 L575,280" fill="none" stroke="rgba(255,100,100,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Patients list -->
           <rect x="155" y="340" width="430" height="100" rx="10" fill="rgba(255,255,255,0.08)"/>
           <text x="168" y="360" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.6)">Recent Patients</text>
           <rect x="165" y="370" width="410" height="28" rx="6" fill="rgba(255,255,255,0.08)"/>
@@ -819,7 +707,7 @@
         <div class="cs-number">01 / 06</div>
         <h3 class="cs-name">NeuroFlow</h3>
         <p class="cs-desc">AI diagnostic platform for hospitals — reducing diagnostic error rates through machine learning and real-time neural monitoring dashboards.</p>
-        <div class="cs-metric"><span class="metric-val">+340%</span> diagnostic accuracy</div>
+        <div class="cs-metric"><span class="metric-val">95%</span> diagnostic accuracy</div>
         <br>
         <a href="#" class="btn-cs">Read More →</a>
       </div>
@@ -837,15 +725,12 @@
           <text x="100" y="64" font-family="Inter,sans-serif" font-size="11" fill="#22C55E">$43,200.50 ▲2.3%</text>
           <text x="240" y="64" font-family="Inter,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)">ETH/USDT $2,840</text>
           <text x="370" y="64" font-family="Inter,sans-serif" font-size="11" fill="#EF4444">SOL/USDT $98.4 ▼1.2%</text>
-          <!-- Candlestick chart -->
           <rect x="10" y="80" width="580" height="240" rx="8" fill="rgba(255,255,255,0.03)"/>
-          <!-- Grid -->
           <line x1="10" y1="140" x2="590" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
           <line x1="10" y1="180" x2="590" y2="180" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
           <line x1="10" y1="220" x2="590" y2="220" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
           <line x1="10" y1="260" x2="590" y2="260" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
           <line x1="10" y1="300" x2="590" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-          <!-- Candles -->
           <line x1="30" y1="168" x2="30" y2="220" stroke="#22C55E" stroke-width="1.5"/><rect x="24" y="180" width="12" height="28" rx="1" fill="#22C55E"/>
           <line x1="58" y1="155" x2="58" y2="210" stroke="#22C55E" stroke-width="1.5"/><rect x="52" y="165" width="12" height="30" rx="1" fill="#22C55E"/>
           <line x1="86" y1="170" x2="86" y2="225" stroke="#EF4444" stroke-width="1.5"/><rect x="80" y="178" width="12" height="28" rx="1" fill="#EF4444"/>
@@ -866,7 +751,6 @@
           <line x1="506" y1="78" x2="506" y2="130" stroke="#22C55E" stroke-width="1.5"/><rect x="500" y="88" width="12" height="26" rx="1" fill="#22C55E"/>
           <line x1="534" y1="95" x2="534" y2="145" stroke="#EF4444" stroke-width="1.5"/><rect x="528" y="105" width="12" height="24" rx="1" fill="#EF4444"/>
           <line x1="562" y1="80" x2="562" y2="128" stroke="#22C55E" stroke-width="1.5"/><rect x="556" y="90" width="12" height="22" rx="1" fill="#22C55E"/>
-          <!-- Volume bars -->
           <rect x="18" y="300" width="564" height="60" rx="4" fill="rgba(255,255,255,0.03)"/>
           <rect x="24" y="335" width="12" height="22" rx="1" fill="rgba(34,197,94,0.4)"/>
           <rect x="52" y="328" width="12" height="29" rx="1" fill="rgba(34,197,94,0.4)"/>
@@ -888,7 +772,6 @@
           <rect x="500" y="298" width="12" height="58" rx="1" fill="rgba(34,197,94,0.7)"/>
           <rect x="528" y="325" width="12" height="30" rx="1" fill="rgba(239,68,68,0.3)"/>
           <rect x="556" y="302" width="12" height="54" rx="1" fill="rgba(34,197,94,0.6)"/>
-          <!-- Order book -->
           <rect x="10" y="370" width="580" height="70" rx="8" fill="rgba(255,255,255,0.04)"/>
           <text x="18" y="388" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">ORDER BOOK</text>
           <rect x="18" y="394" width="260" height="14" rx="3" fill="rgba(34,197,94,0.2)"/>
@@ -920,13 +803,11 @@
           <rect width="600" height="40" fill="rgba(0,0,0,0.3)"/>
           <circle cx="20" cy="20" r="6" fill="#FF5F57"/><circle cx="40" cy="20" r="6" fill="#FFBD2E"/><circle cx="60" cy="20" r="6" fill="#28C840"/>
           <rect x="180" y="14" width="240" height="14" rx="7" fill="rgba(255,255,255,0.15)"/>
-          <!-- Sidebar -->
           <rect x="0" y="40" width="130" height="410" fill="rgba(0,0,0,0.15)"/>
           <rect x="10" y="54" width="110" height="28" rx="8" fill="rgba(255,255,255,0.2)"/>
           <rect x="10" y="90" width="90" height="22" rx="6" fill="rgba(255,255,255,0.08)"/>
           <rect x="10" y="120" width="100" height="22" rx="6" fill="rgba(255,255,255,0.08)"/>
           <rect x="10" y="150" width="80" height="22" rx="6" fill="rgba(255,255,255,0.08)"/>
-          <!-- KPI row -->
           <rect x="145" y="54" width="140" height="90" rx="10" fill="rgba(255,255,255,0.12)"/>
           <text x="155" y="74" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">CARBON SAVED (T)</text>
           <text x="155" y="115" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="white">24,500</text>
@@ -936,7 +817,6 @@
           <rect x="445" y="54" width="140" height="90" rx="10" fill="rgba(255,255,255,0.12)"/>
           <text x="455" y="74" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">COST SAVED</text>
           <text x="455" y="115" font-family="Inter,sans-serif" font-size="28" font-weight="900" fill="#A7F3D0">64%</text>
-          <!-- Stacked bar chart -->
           <rect x="145" y="158" width="440" height="180" rx="10" fill="rgba(255,255,255,0.08)"/>
           <text x="158" y="178" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Monthly ESG Reporting Reduction</text>
           <rect x="160" y="310" width="40" height="20" rx="3" fill="rgba(255,255,255,0.15)"/><rect x="160" y="290" width="40" height="20" rx="3" fill="rgba(255,255,255,0.4)"/><rect x="160" y="240" width="40" height="50" rx="3" fill="rgba(255,255,255,0.7)"/>
@@ -953,7 +833,6 @@
           <text x="388" y="332" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">May</text>
           <text x="443" y="332" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Jun</text>
           <text x="498" y="332" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">Jul</text>
-          <!-- Report list -->
           <rect x="145" y="350" width="440" height="90" rx="10" fill="rgba(255,255,255,0.08)"/>
           <text x="158" y="370" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Auto-Generated Reports</text>
           <rect x="155" y="378" width="420" height="24" rx="6" fill="rgba(255,255,255,0.08)"/>
@@ -980,27 +859,21 @@
           <rect width="600" height="450" fill="url(#sg)"/>
           <rect width="600" height="40" fill="rgba(0,0,0,0.3)"/>
           <circle cx="20" cy="20" r="6" fill="#FF5F57"/><circle cx="40" cy="20" r="6" fill="#FFBD2E"/><circle cx="60" cy="20" r="6" fill="#28C840"/>
-          <!-- Pitch top-down -->
           <rect x="10" y="48" width="280" height="180" rx="8" fill="rgba(0,0,0,0.2)"/>
           <rect x="20" y="56" width="260" height="164" rx="4" fill="rgba(0,128,0,0.35)"/>
-          <!-- Pitch lines -->
           <ellipse cx="150" cy="138" rx="40" ry="40" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
           <line x1="150" y1="56" x2="150" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
           <rect x="20" y="112" width="30" height="52" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
           <rect x="230" y="112" width="30" height="52" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-          <!-- Player dots -->
           <circle cx="80" cy="100" r="6" fill="#FFF176" opacity="0.9"/><circle cx="120" cy="130" r="6" fill="#FFF176" opacity="0.9"/><circle cx="80" cy="165" r="6" fill="#FFF176" opacity="0.9"/>
           <circle cx="200" cy="100" r="6" fill="#90CAF9" opacity="0.9"/><circle cx="170" cy="138" r="6" fill="#90CAF9" opacity="0.9"/><circle cx="205" cy="168" r="6" fill="#90CAF9" opacity="0.9"/>
           <circle cx="148" cy="138" r="5" fill="white"/>
-          <!-- Heatmap blobs -->
           <ellipse cx="120" cy="138" rx="30" ry="35" fill="rgba(255,100,0,0.2)"/>
           <ellipse cx="190" cy="130" rx="25" ry="30" fill="rgba(255,50,50,0.15)"/>
-          <!-- Stats panels -->
           <rect x="300" y="48" width="290" height="180" rx="8" fill="rgba(0,0,0,0.2)"/>
           <text x="314" y="68" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Live Match Analytics</text>
-          <text x="314" y="100" font-family="Inter,sans,serif" font-size="24" font-weight="900" fill="white">Chelsea  2–1  Arsenal</text>
+          <text x="314" y="100" font-family="Inter,sans-serif" font-size="24" font-weight="900" fill="white">Chelsea  2–1  Arsenal</text>
           <text x="314" y="118" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">67' · Premier League · Matchday 32</text>
-          <!-- Possession bar -->
           <rect x="314" y="132" width="260" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
           <rect x="314" y="132" width="156" height="6" rx="3" fill="rgba(255,255,255,0.7)"/>
           <text x="314" y="150" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Possession: 60%</text>
@@ -1013,7 +886,6 @@
           <rect x="314" y="186" width="100" height="4" rx="2" fill="rgba(100,200,255,0.7)"/>
           <text x="314" y="204" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Shots: 8</text>
           <text x="550" y="204" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">5</text>
-          <!-- Player cards -->
           <rect x="10" y="240" width="580" height="200" rx="8" fill="rgba(0,0,0,0.2)"/>
           <text x="22" y="260" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Player Performance (Top 3)</text>
           <rect x="16" y="268" width="180" height="100" rx="8" fill="rgba(255,255,255,0.1)"/>
@@ -1029,7 +901,6 @@
           <text x="402" y="288" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white">M. Salah</text>
           <text x="402" y="304" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Winger</text>
           <text x="402" y="335" font-family="Inter,sans-serif" font-size="20" font-weight="900" fill="white">7.7</text>
-          <!-- Sprint data -->
           <rect x="16" y="378" width="568" height="52" rx="8" fill="rgba(255,255,255,0.07)"/>
           <text x="26" y="398" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.5)">MAX SPRINT</text>
           <text x="100" y="398" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="white">36.4 km/h</text>
@@ -1058,7 +929,6 @@
           <rect width="600" height="450" fill="url(#lg)"/>
           <rect width="600" height="40" fill="rgba(0,0,0,0.3)"/>
           <circle cx="20" cy="20" r="6" fill="#FF5F57"/><circle cx="40" cy="20" r="6" fill="#FFBD2E"/><circle cx="60" cy="20" r="6" fill="#28C840"/>
-          <!-- Document viewer -->
           <rect x="10" y="48" width="220" height="390" rx="8" fill="rgba(0,0,0,0.2)"/>
           <text x="20" y="68" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">📄 Documents</text>
           <rect x="18" y="76" width="204" height="36" rx="6" fill="rgba(255,255,255,0.15)"/>
@@ -1071,27 +941,22 @@
           <text x="28" y="219" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Terms_of_Service.pdf</text>
           <rect x="18" y="236" width="204" height="36" rx="6" fill="rgba(255,255,255,0.06)"/>
           <text x="28" y="259" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Employment_Agr.pdf</text>
-          <!-- Main doc viewer -->
           <rect x="240" y="48" width="350" height="390" rx="8" fill="rgba(255,255,255,0.08)"/>
           <text x="252" y="70" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Contract_2024_Final.pdf</text>
           <rect x="252" y="80" width="200" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
           <rect x="252" y="96" width="310" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
           <rect x="252" y="112" width="290" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
           <rect x="252" y="128" width="320" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-          <!-- Highlighted clause (risk) -->
           <rect x="248" y="145" width="326" height="38" rx="4" fill="rgba(239,68,68,0.25)"/>
           <rect x="252" y="150" width="290" height="8" rx="4" fill="rgba(255,100,100,0.7)"/>
           <rect x="252" y="166" width="200" height="8" rx="4" fill="rgba(255,100,100,0.5)"/>
           <text x="544" y="160" font-family="Inter,sans-serif" font-size="9" fill="#FCA5A5">⚠</text>
-          <!-- Neutral -->
           <rect x="252" y="195" width="310" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
           <rect x="252" y="211" width="280" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-          <!-- Positive clause -->
           <rect x="248" y="228" width="326" height="28" rx="4" fill="rgba(34,197,94,0.2)"/>
           <rect x="252" y="234" width="250" height="8" rx="4" fill="rgba(100,255,150,0.6)"/>
           <rect x="252" y="250" width="310" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
           <rect x="252" y="266" width="295" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-          <!-- AI Analysis panel -->
           <rect x="240" y="290" width="350" height="140" rx="8" fill="rgba(0,0,0,0.2)"/>
           <text x="252" y="312" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)">🤖 AI Analysis</text>
           <rect x="252" y="320" width="320" height="24" rx="6" fill="rgba(239,68,68,0.2)"/>
@@ -1100,7 +965,7 @@
           <text x="260" y="364" font-family="Inter,sans-serif" font-size="9.5" fill="#86EFAC">✓ Clause 12.1: Standard IP terms — acceptable</text>
           <rect x="252" y="376" width="320" height="24" rx="6" fill="rgba(251,191,36,0.15)"/>
           <text x="260" y="392" font-family="Inter,sans-serif" font-size="9.5" fill="#FDE68A">⚡ 5x faster than manual review · 98.2% accuracy</text>
-          <rect x="252" y="404" width="140" height="20" rx="10" fill="var(--violet,rgba(108,59,255,0.8))"/>
+          <rect x="252" y="404" width="140" height="20" rx="10" fill="rgba(108,59,255,0.8)"/>
           <text x="295" y="418" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="white">Generate Report</text>
         </svg>
       </div>
@@ -1126,9 +991,7 @@
           <rect width="600" height="40" fill="rgba(0,0,0,0.35)"/>
           <circle cx="20" cy="20" r="6" fill="#FF5F57"/><circle cx="40" cy="20" r="6" fill="#FFBD2E"/><circle cx="60" cy="20" r="6" fill="#28C840"/>
           <text x="240" y="26" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="rgba(255,255,255,0.7)">UrbanGrid Digital Twin — Berlin</text>
-          <!-- Map grid representing city blocks -->
           <rect x="10" y="48" width="380" height="390" rx="8" fill="rgba(0,0,0,0.25)"/>
-          <!-- City grid -->
           <g opacity="0.4" stroke="rgba(14,165,233,0.5)" stroke-width="0.5" fill="none">
             <line x1="10" y1="100" x2="390" y2="100"/><line x1="10" y1="150" x2="390" y2="150"/>
             <line x1="10" y1="200" x2="390" y2="200"/><line x1="10" y1="250" x2="390" y2="250"/>
@@ -1137,7 +1000,6 @@
             <line x1="180" y1="48" x2="180" y2="438"/><line x1="240" y1="48" x2="240" y2="438"/>
             <line x1="300" y1="48" x2="300" y2="438"/><line x1="350" y1="48" x2="350" y2="438"/>
           </g>
-          <!-- City blocks -->
           <rect x="20" y="58" width="32" height="32" rx="3" fill="rgba(14,165,233,0.3)"/>
           <rect x="70" y="58" width="42" height="32" rx="3" fill="rgba(14,165,233,0.2)"/>
           <rect x="130" y="58" width="38" height="32" rx="3" fill="rgba(14,165,233,0.4)"/>
@@ -1152,9 +1014,7 @@
           <rect x="20" y="168" width="32" height="22" rx="3" fill="rgba(14,165,233,0.2)"/>
           <rect x="70" y="168" width="100" height="22" rx="3" fill="rgba(14,165,233,0.3)"/>
           <rect x="310" y="168" width="70" height="22" rx="3" fill="rgba(14,165,233,0.25)"/>
-          <!-- Hotspot glow -->
           <circle cx="200" cy="200" r="60" fill="url(#glow1)" opacity="0.8"/>
-          <!-- Nodes & connections -->
           <circle cx="90" cy="124" r="5" fill="#22D3EE" opacity="0.9"/>
           <circle cx="200" cy="148" r="8" fill="#22D3EE"/>
           <circle cx="320" cy="124" r="5" fill="#22D3EE" opacity="0.9"/>
@@ -1164,21 +1024,18 @@
           <line x1="320" y1="124" x2="200" y2="148" stroke="rgba(34,211,238,0.4)" stroke-width="1.5"/>
           <line x1="150" y1="280" x2="200" y2="148" stroke="rgba(34,211,238,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
           <line x1="280" y1="340" x2="200" y2="148" stroke="rgba(34,211,238,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
-          <!-- Info popups -->
           <rect x="110" y="100" width="64" height="32" rx="6" fill="rgba(0,0,0,0.7)"/>
           <text x="115" y="112" font-family="Inter,sans-serif" font-size="7.5" fill="white">Zone A-4</text>
           <text x="115" y="124" font-family="Inter,sans-serif" font-size="7.5" fill="#22D3EE">↑ 94% eff.</text>
           <rect x="215" y="130" width="68" height="32" rx="6" fill="rgba(0,0,0,0.75)"/>
           <text x="220" y="142" font-family="Inter,sans-serif" font-size="7.5" fill="white">City Center</text>
           <text x="220" y="154" font-family="Inter,sans-serif" font-size="7.5" fill="#FDE047">⚡ 2.3 GW</text>
-          <!-- Legend -->
           <rect x="20" y="360" width="360" height="70" rx="6" fill="rgba(0,0,0,0.3)"/>
           <circle cx="36" cy="380" r="5" fill="#22D3EE"/><text x="46" y="384" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Grid Node</text>
           <circle cx="116" cy="380" r="5" fill="#FDE047"/><text x="126" y="384" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">High Load</text>
-          <circle cx="196" cy="380" r="5" fill="#86EFAC"/><text x="206" y="384" font-family="Inter,sans,serif" font-size="9" fill="rgba(255,255,255,0.6)">Optimal</text>
+          <circle cx="196" cy="380" r="5" fill="#86EFAC"/><text x="206" y="384" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Optimal</text>
           <rect x="20" y="394" width="360" height="28" rx="4" fill="rgba(14,165,233,0.15)"/>
           <text x="28" y="412" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">Total load: 18.4 GW · 12 cities · Uptime 99.98% · 🌍 Berlin HQ</text>
-          <!-- Right panel -->
           <rect x="400" y="48" width="190" height="390" rx="8" fill="rgba(0,0,0,0.2)"/>
           <text x="412" y="70" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">Grid Status</text>
           <rect x="410" y="80" width="170" height="60" rx="8" fill="rgba(255,255,255,0.08)"/>
@@ -1220,7 +1077,6 @@
       <h2 class="section-title">End-to-End<br>AI Product Services</h2>
     </div>
     <div class="services-grid">
-
       <div class="service-card fade-up">
         <div class="service-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -1233,7 +1089,6 @@
         <p>Custom LLMs, AI agents, retrieval-augmented generation pipelines, and production-grade ML infrastructure tailored to your business needs.</p>
         <a href="#" class="service-link">Learn More →</a>
       </div>
-
       <div class="service-card fade-up fade-up-d1">
         <div class="service-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -1246,7 +1101,6 @@
         <p>User experience strategy, interface design, and design systems — built for scale, accessibility, and conversion from day one.</p>
         <a href="#" class="service-link">Learn More →</a>
       </div>
-
       <div class="service-card fade-up fade-up-d2">
         <div class="service-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -1259,7 +1113,6 @@
         <p>High-performance frontend and backend development using modern stacks — React, Next.js, TypeScript, and cloud-native architectures.</p>
         <a href="#" class="service-link">Learn More →</a>
       </div>
-
       <div class="service-card fade-up fade-up-d3">
         <div class="service-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -1272,7 +1125,6 @@
         <p>Data pipelines, real-time dashboards, predictive analytics, and business intelligence platforms that turn raw data into competitive advantage.</p>
         <a href="#" class="service-link">Learn More →</a>
       </div>
-
     </div>
   </div>
 </section>
@@ -1304,15 +1156,21 @@
   </div>
 </section>
 
-<!-- ── CTA ── -->
+<!-- ── CONTACT ── -->
 <section class="cta-section" id="contact">
   <div class="cta-glow"></div>
   <div class="container" style="position:relative">
-    <h2 class="fade-up">Ready to build<br>something great?</h2>
-    <p class="fade-up fade-up-d1">From idea to launch — we're your end-to-end AI product partner. Let's talk about your next big thing.</p>
-    <div class="cta-btns fade-up fade-up-d2">
-      <a href="mailto:hello@nextlab.ai" class="btn-primary-dark">Book Discovery Call →</a>
-      <a href="#work" class="btn-outline-dark">View Our Work</a>
+    <h2 class="fade-up">Let's build<br>something great.</h2>
+    <p class="fade-up fade-up-d1">Have a project in mind? Write to us — we'll get back to you shortly.</p>
+    <div class="contact-email-block fade-up fade-up-d2">
+      <a href="mailto:contact@nextlab.ai" class="contact-email-link">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="3" stroke="white" stroke-width="1.8"/>
+          <path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        contact@nextlab.ai
+      </a>
+      <div class="contact-phone">+852 461 780 60 &nbsp;·&nbsp; Kyrgyzstan</div>
     </div>
   </div>
 </section>
@@ -1333,49 +1191,33 @@
         <p class="footer-tagline">AI product development studio building the next generation of intelligent digital products.</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#">AI Development</a>
-        <a href="#">Product Design</a>
-        <a href="#">Web Engineering</a>
-        <a href="#">Data & Analytics</a>
-        <a href="#">Consulting</a>
-      </div>
-      <div class="footer-col">
         <h4>Company</h4>
-        <a href="#">About Us</a>
-        <a href="#">Our Work</a>
-        <a href="#">Insights</a>
-        <a href="#">Careers</a>
-        <a href="#">Press</a>
+        <a href="#about">About Us</a>
+        <a href="#work">Our Work</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:hello@nextlab.ai">hello@nextlab.ai</a>
-        <a href="#">Book a Call</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter / X</a>
-        <a href="#">GitHub</a>
+        <a href="mailto:contact@nextlab.ai">contact@nextlab.ai</a>
+        <a href="tel:+85246178060">+852 46178060</a>
+        <span class="footer-country">Kyrgyzstan</span>
       </div>
     </div>
     <div class="footer-bar">
       <span>© 2025 Next Lab Studio. All rights reserved.</span>
       <div style="display:flex;gap:20px;">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Settings</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-  // ── Navbar scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // ── Mobile menu
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     const ham = document.getElementById('hamburger');
@@ -1391,7 +1233,6 @@
     }
   }
 
-  // ── Intersection Observer for fade animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1403,24 +1244,12 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // ── Ticker duplicate check (ensure seamless)
   const ticker = document.getElementById('ticker');
   if (ticker) {
     const trackWidth = ticker.scrollWidth / 2;
     ticker.style.animation = `ticker ${Math.max(20, trackWidth / 50)}s linear infinite`;
   }
-
-  // ── Smooth dropdown close on outside click
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-links')) {
-      document.querySelectorAll('.dropdown').forEach(d => {
-        d.style.opacity = '';
-        d.style.pointerEvents = '';
-      });
-    }
-  });
 </script>
-
 
 </body>
 </html>
