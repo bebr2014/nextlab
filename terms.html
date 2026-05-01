@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Next Lab</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='8' fill='%236C3BFF'/%3E%3Cpath d='M7 22V8L15.5 20V8' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5 8L24 22' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --violet: #6C3BFF;
+    --violet-dark: #5529E0;
+    --bg: #FFFFFF;
+    --bg2: #F5F5F3;
+    --dark: #0F0F14;
+    --text: #0A0A0F;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --border: #E5E7EB;
+    --radius: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  .navbar {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 99;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+    font-weight: 800; font-size: 18px; letter-spacing: -0.02em;
+  }
+  .nav-back {
+    display: flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--text-muted);
+    font-size: 14px; font-weight: 500;
+    padding: 8px 14px; border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-back:hover { background: var(--bg2); color: var(--violet); }
+
+  .doc-hero {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 0 56px;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .container-wide { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .doc-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--violet);
+    margin-bottom: 12px; display: block;
+  }
+  .doc-title {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900; letter-spacing: -0.04em;
+    line-height: 1.05; color: var(--text);
+    margin-bottom: 16px;
+  }
+  .doc-meta {
+    font-size: 14px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .doc-meta span { display: flex; align-items: center; gap: 6px; }
+
+  .doc-body { padding: 72px 0 100px; }
+  .doc-content h2 {
+    font-size: 22px; font-weight: 800;
+    letter-spacing: -0.03em; color: var(--text);
+    margin: 48px 0 16px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .doc-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .doc-content h3 {
+    font-size: 16px; font-weight: 700; color: var(--text);
+    margin: 28px 0 10px;
+  }
+  .doc-content p {
+    font-size: 15px; color: var(--text-muted);
+    line-height: 1.75; margin-bottom: 16px;
+  }
+  .doc-content ul, .doc-content ol {
+    margin: 0 0 20px 0; padding-left: 0; list-style: none;
+  }
+  .doc-content ul li, .doc-content ol li {
+    font-size: 15px; color: var(--text-muted);
+    line-height: 1.7; margin-bottom: 10px;
+    padding-left: 20px; position: relative;
+  }
+  .doc-content ul li::before {
+    content: '–';
+    position: absolute; left: 0;
+    color: var(--violet); font-weight: 700;
+  }
+  .doc-content ol { counter-reset: item; }
+  .doc-content ol li { counter-increment: item; }
+  .doc-content ol li::before {
+    content: counter(item) '.';
+    position: absolute; left: 0;
+    color: var(--violet); font-weight: 700; font-size: 14px;
+  }
+  .doc-content strong { color: var(--text); font-weight: 600; }
+  .doc-content a { color: var(--violet); text-decoration: none; }
+  .doc-content a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: rgba(108,59,255,0.05);
+    border: 1px solid rgba(108,59,255,0.15);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .highlight-box p { margin: 0; color: var(--text); font-size: 15px; line-height: 1.7; }
+
+  .warning-box {
+    background: rgba(239,68,68,0.05);
+    border: 1px solid rgba(239,68,68,0.15);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .warning-box p { margin: 0; color: var(--text); font-size: 15px; line-height: 1.7; }
+
+  .toc {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+  .toc h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+  .toc ol li {
+    counter-increment: toc;
+    margin-bottom: 8px; padding-left: 0;
+    font-size: 14px; color: var(--text-muted);
+  }
+  .toc ol li::before { display: none; }
+  .toc ol li a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--text-muted); text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .toc ol li a:hover { color: var(--violet); }
+  .toc ol li a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px; font-weight: 700;
+    color: var(--text-light);
+    min-width: 22px;
+  }
+
+  .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 0; }
+  .footer-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--text-light); flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bar a { color: var(--text-light); text-decoration: none; transition: color 0.15s; }
+  .footer-bar a:hover { color: var(--violet); }
+
+  @media (max-width: 600px) {
+    .container { padding: 0 20px; }
+    .container-wide { padding: 0 20px; }
+    .nav-inner { padding: 0 20px; }
+    .doc-hero { padding: 48px 0 40px; }
+    .doc-body { padding: 48px 0 72px; }
+    .footer-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="8" fill="#6C3BFF"/>
+        <path d="M7 22V8L15.5 20V8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 8L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Next Lab
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="doc-hero">
+  <div class="container">
+    <span class="doc-label">Legal</span>
+    <h1 class="doc-title">Terms of Service</h1>
+    <div class="doc-meta">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="#9CA3AF" stroke-width="1.3"/><path d="M1 6h12M5 1v2M9 1v2" stroke="#9CA3AF" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Last updated: May 1, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#9CA3AF" stroke-width="1.3"/><path d="M7 4v3l2 2" stroke="#9CA3AF" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Estimated read: 7 minutes
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="doc-body">
+  <div class="container">
+
+    <div class="highlight-box">
+      <p>Please read these Terms of Service carefully before engaging Next Lab Studio for any services. By contacting us, signing a proposal, or using our website, you agree to be bound by these terms. If you do not agree, please do not use our services.</p>
+    </div>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#agreement">Agreement to Terms</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#engagements">Client Engagements</a></li>
+        <li><a href="#ip">Intellectual Property</a></li>
+        <li><a href="#confidentiality">Confidentiality</a></li>
+        <li><a href="#payment">Payment Terms</a></li>
+        <li><a href="#warranties">Warranties &amp; Representations</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#governing">Governing Law</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+
+    <div class="doc-content">
+
+      <h2 id="agreement">1. Agreement to Terms</h2>
+      <p>These Terms of Service ("Terms") govern your use of the Next Lab Studio website and any services provided by Next Lab Studio ("Company," "we," "us," or "our"). By accessing our website at nextlab.ai, submitting an inquiry, or entering into a service agreement with us, you confirm that you have read, understood, and agree to be bound by these Terms.</p>
+      <p>If you are agreeing to these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind that entity to these Terms.</p>
+
+      <h2 id="services">2. Our Services</h2>
+      <p>Next Lab Studio provides professional AI product development services including, but not limited to:</p>
+      <ul>
+        <li>AI application and system development (LLMs, agents, pipelines)</li>
+        <li>Product design and user experience strategy</li>
+        <li>Web engineering and full-stack development</li>
+        <li>Data engineering, analytics, and business intelligence</li>
+        <li>Technical consulting and AI strategy advisory</li>
+      </ul>
+      <p>The specific scope, deliverables, timelines, and fees for each engagement are defined in a separate Statement of Work or project proposal agreed upon by both parties. In the event of any conflict between these Terms and a signed agreement, the signed agreement will take precedence.</p>
+
+      <h2 id="engagements">3. Client Engagements</h2>
+
+      <h3>Project Scope</h3>
+      <p>All project engagements begin with a discovery call and a written proposal or Statement of Work outlining the scope of services, timeline, and pricing. Work begins only upon written acceptance of the proposal and receipt of any agreed deposit.</p>
+
+      <h3>Client Responsibilities</h3>
+      <p>To deliver successful outcomes, clients agree to:</p>
+      <ul>
+        <li>Provide timely access to necessary information, data, systems, and decision-makers.</li>
+        <li>Review and provide feedback on deliverables within agreed timeframes.</li>
+        <li>Ensure that any materials, data, or assets provided to us do not infringe third-party rights.</li>
+        <li>Designate a primary point of contact for the duration of the project.</li>
+      </ul>
+
+      <h3>Change Requests</h3>
+      <p>Any changes to the agreed project scope must be requested in writing. We will assess the impact on timeline and budget and provide a revised proposal before proceeding. Verbal change requests are not binding.</p>
+
+      <h2 id="ip">4. Intellectual Property</h2>
+
+      <h3>Work Product</h3>
+      <p>Upon receipt of full payment for a project, and unless otherwise agreed in writing, Next Lab Studio assigns to the client all intellectual property rights in the final deliverables specifically created for that engagement ("Work Product").</p>
+
+      <h3>Pre-Existing IP &amp; Tools</h3>
+      <p>Next Lab Studio retains all rights to pre-existing intellectual property, proprietary frameworks, methodologies, tools, libraries, and know-how used in the delivery of services ("Background IP"). We grant clients a non-exclusive, non-transferable license to use Background IP solely to the extent incorporated into the Work Product and necessary for its intended use.</p>
+
+      <h3>Open-Source Components</h3>
+      <p>Some deliverables may incorporate open-source software. Such components remain subject to their respective open-source licenses, which we will disclose upon request.</p>
+
+      <h3>Portfolio Rights</h3>
+      <p>Unless a client requests otherwise in writing prior to project completion, Next Lab Studio reserves the right to reference the existence of the engagement and display non-confidential aspects of the work in our portfolio, case studies, and marketing materials.</p>
+
+      <h2 id="confidentiality">5. Confidentiality</h2>
+      <p>Both parties agree to keep confidential any proprietary or sensitive information shared during the course of the engagement. "Confidential Information" includes business plans, technical specifications, data, pricing, and any information designated as confidential by either party.</p>
+      <p>Confidentiality obligations do not apply to information that:</p>
+      <ul>
+        <li>Is or becomes publicly available through no fault of the receiving party.</li>
+        <li>Was already known to the receiving party before disclosure.</li>
+        <li>Is independently developed by the receiving party without use of the Confidential Information.</li>
+        <li>Is required to be disclosed by law or court order, provided that the disclosing party gives prompt notice where legally permitted.</li>
+      </ul>
+      <p>Confidentiality obligations survive the termination of any engagement for a period of three (3) years unless a separate NDA specifies otherwise.</p>
+
+      <h2 id="payment">6. Payment Terms</h2>
+      <ul>
+        <li>Payment schedules are defined in each project proposal. Typical arrangements include an upfront deposit (30–50%) with the remainder tied to milestones or project completion.</li>
+        <li>Invoices are due within 14 calendar days of issue unless otherwise agreed.</li>
+        <li>Late payments may incur an interest charge of 1.5% per month on overdue balances.</li>
+        <li>We reserve the right to pause work on any project where payment is overdue by more than 14 days, without this constituting a breach of our obligations.</li>
+        <li>All fees are exclusive of applicable taxes, which are the responsibility of the client.</li>
+      </ul>
+
+      <h2 id="warranties">7. Warranties &amp; Representations</h2>
+      <p>Next Lab Studio warrants that:</p>
+      <ul>
+        <li>Services will be performed with reasonable skill and care by qualified professionals.</li>
+        <li>We have the right to enter into agreements with clients and to grant the intellectual property rights described herein.</li>
+        <li>Deliverables, to our knowledge, will not infringe the intellectual property rights of any third party.</li>
+      </ul>
+
+      <div class="warning-box">
+        <p><strong>Disclaimer:</strong> Except as expressly set out above, all services and deliverables are provided "as is" without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that AI systems or software will be error-free or operate without interruption.</p>
+      </div>
+
+      <h2 id="liability">8. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by applicable law, Next Lab Studio's total cumulative liability to any client for any claims arising out of or related to our services shall not exceed the total fees paid by that client for the specific project giving rise to the claim in the twelve (12) months preceding the claim.</p>
+      <p>In no event shall Next Lab Studio be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, business, or goodwill, even if we have been advised of the possibility of such damages.</p>
+      <p>These limitations apply regardless of the legal theory on which the claim is based, including contract, tort, negligence, strict liability, or otherwise.</p>
+
+      <h2 id="indemnification">9. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Next Lab Studio and its team members from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising from:</p>
+      <ul>
+        <li>Your use of our services or deliverables in violation of applicable law.</li>
+        <li>Materials, data, or content you provide that infringes the rights of any third party.</li>
+        <li>Your breach of these Terms or any project agreement.</li>
+      </ul>
+
+      <h2 id="termination">10. Termination</h2>
+
+      <h3>By Either Party</h3>
+      <p>Either party may terminate an engagement by providing 30 days' written notice. Upon termination, the client shall pay for all work completed up to the termination date at the agreed rate, plus any reasonable costs incurred in connection with the termination.</p>
+
+      <h3>For Cause</h3>
+      <p>Either party may terminate immediately upon written notice if the other party materially breaches these Terms and fails to cure the breach within 14 days of written notice describing the breach.</p>
+
+      <h3>Effect of Termination</h3>
+      <p>Upon termination, all outstanding payments become immediately due. We will deliver all completed or in-progress work product in our possession upon receipt of final payment. Provisions that by their nature should survive termination (including confidentiality, payment obligations, intellectual property, and limitation of liability) will remain in effect.</p>
+
+      <h2 id="governing">11. Governing Law</h2>
+      <p>These Terms and any disputes arising from them shall be governed by and construed in accordance with the laws of the Kyrgyz Republic, without regard to its conflict of law principles. The parties agree to attempt to resolve any disputes informally before initiating formal proceedings.</p>
+      <p>If informal resolution fails, disputes shall be submitted to binding arbitration or the competent courts of the Kyrgyz Republic, as mutually agreed.</p>
+
+      <h2 id="changes">12. Changes to These Terms</h2>
+      <p>We reserve the right to modify these Terms at any time. Material changes will be communicated by updating the "Last updated" date at the top of this page and, where appropriate, by email notification to active clients. Continued engagement with our services after changes take effect constitutes acceptance of the revised Terms.</p>
+      <p>For ongoing projects, any changes to these Terms will not take effect until the conclusion of the current project phase unless both parties expressly agree otherwise in writing.</p>
+
+      <h2 id="contact">13. Contact</h2>
+      <p>If you have any questions about these Terms or would like to discuss any aspect of a potential engagement, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:contact@nextlab.ai">contact@nextlab.ai</a></li>
+        <li><strong>Phone:</strong> +852 46178060</li>
+        <li><strong>Location:</strong> Kyrgyzstan</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-bar">
+      <span>© 2025 Next Lab Studio. All rights reserved.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Next Lab</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='8' fill='%236C3BFF'/%3E%3Cpath d='M7 22V8L15.5 20V8' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5 8L24 22' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --violet: #6C3BFF;
+    --violet-dark: #5529E0;
+    --bg: #FFFFFF;
+    --bg2: #F5F5F3;
+    --dark: #0F0F14;
+    --text: #0A0A0F;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --border: #E5E7EB;
+    --radius: 16px;
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 99;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+    font-weight: 800; font-size: 18px; letter-spacing: -0.02em;
+  }
+  .nav-back {
+    display: flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--text-muted);
+    font-size: 14px; font-weight: 500;
+    padding: 8px 14px; border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-back:hover { background: var(--bg2); color: var(--violet); }
+
+  /* ── HERO ── */
+  .doc-hero {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 0 56px;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .container-wide { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .doc-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--violet);
+    margin-bottom: 12px; display: block;
+  }
+  .doc-title {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900; letter-spacing: -0.04em;
+    line-height: 1.05; color: var(--text);
+    margin-bottom: 16px;
+  }
+  .doc-meta {
+    font-size: 14px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .doc-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* ── CONTENT ── */
+  .doc-body { padding: 72px 0 100px; }
+  .doc-content h2 {
+    font-size: 22px; font-weight: 800;
+    letter-spacing: -0.03em; color: var(--text);
+    margin: 48px 0 16px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .doc-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+  .doc-content h3 {
+    font-size: 16px; font-weight: 700; color: var(--text);
+    margin: 28px 0 10px;
+  }
+  .doc-content p {
+    font-size: 15px; color: var(--text-muted);
+    line-height: 1.75; margin-bottom: 16px;
+  }
+  .doc-content ul, .doc-content ol {
+    margin: 0 0 20px 0; padding-left: 0; list-style: none;
+  }
+  .doc-content ul li, .doc-content ol li {
+    font-size: 15px; color: var(--text-muted);
+    line-height: 1.7; margin-bottom: 10px;
+    padding-left: 20px; position: relative;
+  }
+  .doc-content ul li::before {
+    content: '–';
+    position: absolute; left: 0;
+    color: var(--violet); font-weight: 700;
+  }
+  .doc-content ol { counter-reset: item; }
+  .doc-content ol li { counter-increment: item; }
+  .doc-content ol li::before {
+    content: counter(item) '.';
+    position: absolute; left: 0;
+    color: var(--violet); font-weight: 700; font-size: 14px;
+  }
+  .doc-content strong { color: var(--text); font-weight: 600; }
+  .doc-content a { color: var(--violet); text-decoration: none; }
+  .doc-content a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: rgba(108,59,255,0.05);
+    border: 1px solid rgba(108,59,255,0.15);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .highlight-box p { margin: 0; color: var(--text); font-size: 15px; line-height: 1.7; }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+  .toc h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+  .toc ol li {
+    counter-increment: toc;
+    margin-bottom: 8px; padding-left: 0;
+    font-size: 14px; color: var(--text-muted);
+  }
+  .toc ol li::before { display: none; }
+  .toc ol li a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--text-muted); text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .toc ol li a:hover { color: var(--violet); }
+  .toc ol li a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px; font-weight: 700;
+    color: var(--text-light);
+    font-variant-numeric: tabular-nums;
+    min-width: 22px;
+  }
+
+  /* ── FOOTER ── */
+  .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 0; }
+  .footer-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--text-light); flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bar a { color: var(--text-light); text-decoration: none; transition: color 0.15s; }
+  .footer-bar a:hover { color: var(--violet); }
+
+  @media (max-width: 600px) {
+    .container { padding: 0 20px; }
+    .container-wide { padding: 0 20px; }
+    .nav-inner { padding: 0 20px; }
+    .doc-hero { padding: 48px 0 40px; }
+    .doc-body { padding: 48px 0 72px; }
+    .footer-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="8" fill="#6C3BFF"/>
+        <path d="M7 22V8L15.5 20V8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 8L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Next Lab
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="doc-hero">
+  <div class="container">
+    <span class="doc-label">Legal</span>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <div class="doc-meta">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="#9CA3AF" stroke-width="1.3"/><path d="M1 6h12M5 1v2M9 1v2" stroke="#9CA3AF" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Last updated: May 1, 2025
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#9CA3AF" stroke-width="1.3"/><path d="M7 4v3l2 2" stroke="#9CA3AF" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Estimated read: 5 minutes
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="doc-body">
+  <div class="container">
+
+    <div class="highlight-box">
+      <p>Your privacy is important to us. This Privacy Policy explains how Next Lab Studio ("we," "us," or "our") collects, uses, and protects your personal information when you use our website and services. We are committed to handling your data responsibly and transparently.</p>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#collect">Information We Collect</a></li>
+        <li><a href="#use">How We Use Your Information</a></li>
+        <li><a href="#sharing">Information Sharing</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#international">International Transfers</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <div class="doc-content">
+
+      <h2 id="collect">1. Information We Collect</h2>
+      <p>We collect information you provide directly to us, information we collect automatically when you use our services, and information from third parties.</p>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li><strong>Contact information</strong> — name, email address, phone number, and company name when you contact us or book a consultation call.</li>
+        <li><strong>Project information</strong> — details about your project, technical requirements, and business goals that you share during our engagement.</li>
+        <li><strong>Communications</strong> — messages, emails, and other content you send us, including feedback and support requests.</li>
+        <li><strong>Payment information</strong> — billing details processed securely through our third-party payment providers. We do not store full card numbers or sensitive payment data.</li>
+      </ul>
+
+      <h3>Information We Collect Automatically</h3>
+      <ul>
+        <li><strong>Usage data</strong> — pages visited, time spent on the site, links clicked, and referring URLs.</li>
+        <li><strong>Device information</strong> — browser type and version, operating system, screen resolution, and device identifiers.</li>
+        <li><strong>IP address and location</strong> — approximate geographic location derived from your IP address.</li>
+        <li><strong>Log data</strong> — server logs including access times, error logs, and similar diagnostic information.</li>
+      </ul>
+
+      <h2 id="use">2. How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li>To respond to your inquiries, schedule calls, and communicate about potential or ongoing projects.</li>
+        <li>To provide, maintain, and improve our services and website.</li>
+        <li>To send you relevant information about our work, updates, and industry insights — only where you have given consent or we have a legitimate interest to do so.</li>
+        <li>To analyze how our website is used and improve the user experience.</li>
+        <li>To detect, prevent, and address technical issues or security incidents.</li>
+        <li>To comply with legal obligations and enforce our agreements.</li>
+      </ul>
+      <p>We process your personal data only when we have a valid legal basis to do so — including your consent, performance of a contract, compliance with legal obligations, or our legitimate business interests.</p>
+
+      <h2 id="sharing">3. Information Sharing</h2>
+      <p>We do not sell, rent, or trade your personal information to third parties. We may share information in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Service providers</strong> — we work with trusted third-party vendors (e.g., cloud hosting, analytics, CRM, and email platforms) who process data on our behalf under strict confidentiality agreements.</li>
+        <li><strong>Legal requirements</strong> — we may disclose information if required by law, regulation, legal process, or governmental request.</li>
+        <li><strong>Business transfers</strong> — if Next Lab Studio is involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction. We will notify you before your information becomes subject to a different privacy policy.</li>
+        <li><strong>Protection of rights</strong> — to protect the rights, property, and safety of Next Lab Studio, our clients, or others.</li>
+      </ul>
+
+      <h2 id="retention">4. Data Retention</h2>
+      <p>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. When we no longer need your data, we securely delete or anonymize it.</p>
+      <p>For client project data, we typically retain records for up to five years following project completion unless a longer period is required by law or agreed contractually.</p>
+
+      <h2 id="security">5. Security</h2>
+      <p>We implement industry-standard technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include encryption of data in transit (TLS), access controls, and regular security reviews.</p>
+      <p>However, no method of transmission over the internet or electronic storage is completely secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security.</p>
+
+      <h2 id="cookies">6. Cookies &amp; Tracking</h2>
+      <p>We use cookies and similar tracking technologies to operate and improve our website. Cookies are small text files stored on your device.</p>
+
+      <h3>Types of Cookies We Use</h3>
+      <ul>
+        <li><strong>Essential cookies</strong> — required for the website to function properly. They cannot be disabled.</li>
+        <li><strong>Analytics cookies</strong> — help us understand how visitors interact with our website (e.g., pages visited, time on site). We use this data in aggregate, anonymized form.</li>
+        <li><strong>Preference cookies</strong> — remember your settings and choices to provide a better experience on return visits.</li>
+      </ul>
+      <p>You can control cookies through your browser settings. Disabling certain cookies may affect website functionality. You can opt out of analytics tracking by using browser privacy modes or ad-blocking extensions.</p>
+
+      <h2 id="rights">7. Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of the personal data we hold about you.</li>
+        <li><strong>Rectification</strong> — request correction of inaccurate or incomplete data.</li>
+        <li><strong>Erasure</strong> — request deletion of your personal data, subject to certain legal exceptions.</li>
+        <li><strong>Restriction</strong> — request that we limit the processing of your data in certain circumstances.</li>
+        <li><strong>Portability</strong> — receive your data in a structured, commonly used, machine-readable format.</li>
+        <li><strong>Objection</strong> — object to processing based on legitimate interests or for direct marketing purposes.</li>
+        <li><strong>Withdraw consent</strong> — where processing is based on your consent, you can withdraw it at any time without affecting the lawfulness of prior processing.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:contact@nextlab.ai">contact@nextlab.ai</a>. We will respond within 30 days.</p>
+
+      <h2 id="children">8. Children's Privacy</h2>
+      <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected data from a child, we will take steps to delete it promptly. If you believe we may have collected information from a child, please contact us immediately.</p>
+
+      <h2 id="international">9. International Transfers</h2>
+      <p>Your information may be transferred to and processed in countries other than your country of residence, including countries where data protection laws may differ from those in your jurisdiction. When we transfer personal data internationally, we take appropriate measures to ensure it remains protected in accordance with this Privacy Policy, including using standard contractual clauses where required.</p>
+
+      <h2 id="changes">10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you by email or a prominent notice on our website.</p>
+      <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information. Continued use of our services after changes become effective constitutes acceptance of the updated policy.</p>
+
+      <h2 id="contact">11. Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:contact@nextlab.ai">contact@nextlab.ai</a></li>
+        <li><strong>Phone:</strong> +852 46178060</li>
+        <li><strong>Location:</strong> Kyrgyzstan</li>
+      </ul>
+      <p>We are committed to resolving any privacy concerns promptly and fairly.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-bar">
+      <span>© 2025 Next Lab Studio. All rights reserved.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
